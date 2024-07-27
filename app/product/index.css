@@ -1,0 +1,4 @@
+.products_right-top {
+    display: flex; /* Flexbox konteynerini aniqlash */
+    justify-content: space-between; /* Elementlarni tarqatish */
+}
