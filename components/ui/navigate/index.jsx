@@ -12,7 +12,7 @@ const Index = () => {
         <nav className="navbar flex items-center py-[15px] justify-between">
           <ul className="flex items-center gap-[10px] flex-wrap">
             <button className="inline-flex justify-center items-center gap-[10px] py-[15px] px-[40px] bg-[#1F1D14] rounded-[5px]">
-              <Image src={Layer} />
+              <Image src={Layer} alt="layer" />
               <p className="text-[20px] not-italic font-normal leading-normal text-white">
                 Каталог
               </p>
@@ -24,19 +24,19 @@ const Index = () => {
                 className="outline-none border-none bg-transparent w-full mr-[5px]"
               />
               <button className="p-[4px]">
-                <Image src={Search} />
+                <Image src={Search} alt="search" />
               </button>
             </div>
           </ul>
           <ul className="flex items-center gap-[13px] flex-wrap mt-4 md:mt-0">
             <button className="py-[13px] px-[12px] rounded-[3px] bg-[#F2F2F2]">
-              <Image src={User} />
+              <Image src={User} alt="user"/>
             </button>
             <button className="py-[13px] px-[12px] rounded-[3px] bg-[#F2F2F2]">
-              <Image src={Wishlist} />
+              <Image src={Wishlist} alt="wishlist" />
             </button>
             <button className="flex items-center py-[15px] px-[30px] gap-[5px] rounded-[5px] ml-[25px] bg-[#F2F2F2] justify-center">
-              <Image src={Korzinka} />
+              <Image src={Korzinka} alt="korzina" />
               <p className="text-[20px] not-italic font-normal leading-normal text-[#1F1D14]">
                 Корзина
               </p>

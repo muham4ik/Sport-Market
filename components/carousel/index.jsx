@@ -11,6 +11,7 @@ const index = () => {
       <div className="carousel_right">
       <Image
       src={Frame}
+      alt="feame"
       />
       </div>
     </div>

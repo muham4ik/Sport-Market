@@ -12,12 +12,14 @@ const index = () => {
               <div className="card_header flex justify-end gap-[48px]  p-[10px] pb-[0px]">
                 <Image
                   src={Wishlist}
+                  alt="wishlis"
                 />
               </div>
               <div className="card_body flex justify-center">
                 <Image
                   className="  pb-[25px]"
                   src={item.image}
+                  alt="image"
                 />
               </div>
               <div className="card_footer w-[216px] pl-[20px] mb-[18px] flex flex-col gap-[24px]">
@@ -27,6 +29,7 @@ const index = () => {
               <button className="w-full flex items-center gap-[6px] py-[15px] px-[91px] bg-[#FBD029] justify-center rounded-b-[5px]">
                   <Image
                     src={Korzina}
+                    alt="image"
                   />
                   <p>Корзина</p>
                 </button>

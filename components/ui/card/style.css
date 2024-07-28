@@ -1,0 +1,74 @@
+/* Desktop stillar saqlanadi */
+
+/* Responsive dizayn uchun mobil qurilmalar */
+@media (max-width: 1024px) {
+    .cards {
+      flex-wrap: wrap; 
+      gap: 16px; 
+    }
+  
+    .card {
+      max-width: 400%; 
+      padding: 20px 25px 30px 15px;
+    }
+  
+    .card_header {
+      gap: 24px; 
+    }
+  
+    .card_footer {
+      width: 100%;
+      padding-left: 10px; 
+    }
+  
+    .card_body img {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .cards {
+      gap: 12px; /* Karta orasidagi bo'shliqni kamaytiradi */
+    }
+  
+    .card {
+      max-width: 200px; /* Karta maksimal kengligi */
+      padding: 15px 20px 25px 10px; /* Paddingni moslashtiradi */
+    }
+  
+    .card_header {
+      gap: 16px; /* Ikkita tasvir orasidagi bo'shliqni kamaytiradi */
+    }
+  
+    .card_footer {
+      width: 100%; /* Footer kengligini 100% qiladi */
+      padding-left: 5px; /* Chapdagi paddingni kamaytiradi */
+    }
+  
+    .card_body img {
+      width: 100%; /* Rasm kengligini 100% qiladi */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .cards {
+      flex-direction: column; /* Kartalarni ustma-ust joylashtiradi */
+      align-items: center; /* Kartalarni markazlashtiradi */
+      gap: 8px; /* Karta orasidagi bo'shliqni kamaytiradi */
+    }
+  
+    .card {
+      max-width: 100%; /* Karta maksimal kengligi */
+      padding: 10px 15px 20px 5px; /* Paddingni moslashtiradi */
+    }
+  
+    .card_footer {
+      width: 100%; /* Footer kengligini 100% qiladi */
+      padding-left: 5px; /* Chapdagi paddingni kamaytiradi */
+    }
+  
+    .card_body img {
+      width: 100%; /* Rasm kengligini 100% qiladi */
+    }
+  }
+  

@@ -11,11 +11,12 @@ const index = () => {
       <div className="container">
         <ul className="navigate flex items-center gap-[6px] py-[20px]">
           <li className="flex gap-[6px] items-center">
-            <Image src={Hom}
+            <Image src={Hom} alt='home'
             />
             <p className="text-[16px] not-italic font-normal leading-normal text-[#000]">Главная</p></li>
           <li className="flex gap-[6px] items-center">
             <Image src={Right}
+            alt='right'
               width={16}
               height={16}
             />
@@ -47,11 +48,11 @@ const index = () => {
             <ul className='flex justify-end mt-[62px] gap-[32px]'>
               <li className='flex items-center gap-[5px]'>
                 <p className='#1F1D14'>Поделиться:</p>
-                <Image src={Share}/>
+                <Image src={Share} alt='share'/>
               </li>
               <li className='flex items-center gap-[5px]'>
                 <p className='#1F1D14'>Распечатать:</p>
-                <Image src={Printer}/>
+                <Image src={Printer} alt='printer'/>
               </li>
             </ul>
           </div>

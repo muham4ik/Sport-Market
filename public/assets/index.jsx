@@ -29,4 +29,5 @@ import Trash from "./icons/trash.svg"
 import Location from "./icons/location.svg"
 import Clik from "./images/click.svg"
 import Payme from "./images/payme.svg"
-export { Heart, Icon, Layers, Logo, Mail, Phone, Polniy, Red, Search, Korzina, User, Left, Right,News ,Top ,Calendar ,Eye ,Kreslo ,Instagram , Facebook , Telegram ,Hom ,Board,Listt ,Shaxzod,Share,Printer ,Trash ,Location ,Clik ,Payme}
+import Butsa from "./images/butsa.svg"
+export { Heart, Icon, Layers, Logo, Mail, Phone, Polniy, Red, Search, Korzina, User, Left, Right,News ,Top ,Calendar ,Eye ,Kreslo ,Instagram , Facebook , Telegram ,Hom ,Board,Listt ,Shaxzod,Share,Printer ,Trash ,Location ,Clik ,Payme ,Butsa}
