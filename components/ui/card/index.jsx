@@ -6,10 +6,10 @@ import { Korzina } from "@/public/assets";
 
 const Index = () => { // Kichik harf bilan yozilgan `index` o'rniga katta harf bilan yozing.
   return (
-    <div className="cards flex items-center gap-[24px]">
+    <div className="cards flex items-center gap-[24px] sm:justify-between sm:flex-col">
       {
-        Akimg.map((item, idx) => ( // `index` o'rniga `idx` ishlating
-          <div className="card rounded-[5px] bg-[#ffff]" key={idx}>
+        Akimg.map((item, index) => ( // `index` o'rniga `idx` ishlating
+          <div className="card rounded-[5px] bg-[#ffff]" key={index}>
             <div className="card_header flex items-start gap-[48px] p-[10px]">
               <Image
                 src={Aksiya}
@@ -23,12 +23,12 @@ const Index = () => { // Kichik harf bilan yozilgan `index` o'rniga katta harf b
             </div>
             <div className="card_body flex justify-center">
               <Image
-                className="relative mt-[-180px] pb-[25px]"
+                className="relative mt-[-180px] pb-[25px] "
                 src={item.image}
                 alt="Product image" // alt atributini qo'shishni unutmang
               />
             </div>
-            <div className="card_footer w-[216px] pl-[20px] mb-[18px]">
+            <div className="card_footer  w-[216px] pl-[20px] mb-[18px]">
               <h1 className="text-[20px] not-italic font-normal leading-normal text-[#000000]">Бутса Nike Mercurial Superfly 8 FG</h1>
               <p className="text-[20px] not-italic font-semibold leading-normal text-[#FF1313]">500 000 uzs</p>
               <p className="text-[16px] not-italic font-normal line-through text-[#1F1D14]">750 000</p>

@@ -1,0 +1,115 @@
+/* footer.css */
+
+/* Mobil ekranlarda ko'rinish */
+@media (max-width: 768px) {
+    .navbar1 {
+      flex-direction: column;
+      align-items: flex-start;
+      padding-top: 40px;
+      padding-bottom: 20px;
+      padding-left: 40px;
+    }
+    
+    .navbar1 .flex {
+      margin-right: 0;
+      margin-left: 0;
+      text-align: center;
+    }
+    
+    .navbar1 ul {
+      margin-right: 0;
+      margin-left: 0;
+      padding-left: 0;
+    }
+    
+    .navbar1 ul li {
+      margin-bottom: 20px;
+    }
+    
+    .navbar1 .flex {
+      margin-bottom: 20px;
+    }
+    
+    .navbar1 .flex:last-of-type {
+      margin-bottom: 0;
+    }
+    
+    .footer-info {
+      text-align: center;
+    }
+    
+    .footer-info p {
+      margin-bottom: 10px;
+    }
+    
+    .footer-info ul {
+      flex-direction: column;
+    }
+    
+    .footer-info ul li {
+      margin-bottom: 10px;
+    }
+    
+    .footer-info ul li:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+  
+  /* Ekstra kichik ekranlar uchun */
+  @media (max-width: 480px) {
+    .navbar1 {
+      padding-top: 30px;
+      padding-bottom: 10px;
+    }
+  
+    .navbar1 .flex {
+      gap: 8px;
+    }
+    
+    .navbar1 ul {
+      gap: 15px;
+    }
+  
+    .navbar1 ul li {
+      font-size: 14px;
+    }
+  
+    .footer-info p {
+      font-size: 14px;
+    }
+  
+    .footer-info ul li {
+      font-size: 14px;
+    }
+  }
+  @media (max-width: 768px) {
+      .footer-bottom {
+        flex-direction: column; /* Flexbox yordamida ustunlik yo'nalishini o'zgartirish */
+        align-items: center; /* Markazga joylashtirish */
+        text-align: center; /* Matnni markazga joylashtirish */
+        padding: 15px; /* Qo'shimcha padding */
+      }
+    
+      .footer-bottom ul {
+        flex-direction: column; /* Flexbox yordamida ustun yo'nalishini o'zgartirish */
+        gap: 10px; /* Elementlar orasidagi bo'shliqni kichiklashtirish */
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .footer-bottom {
+        padding: 10px; /* Qo'shimcha paddingni kichiklashtirish */
+      }
+    
+      .footer-bottom p {
+        font-size: 12px; /* Matn o'lchamini kichiklashtirish */
+      }
+    
+      .footer-bottom ul {
+        gap: 8px; /* Elementlar orasidagi bo'shliqni yanada kichiklashtirish */
+      }
+    
+      .footer-bottom ul li {
+        font-size: 12px; /* Matn o'lchamini kichiklashtirish */
+      }
+    }

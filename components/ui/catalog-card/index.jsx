@@ -9,8 +9,8 @@ const Index = () => {
 
     return (
         <>
-            <div className="container mx-auto px-4">
-                <main className="mb-[80px] bg-[#ffff]">
+        <main className="mb-[80px] sm:mb-[20px] bg-[#ffff]">
+            <div className="container sm:mx-4">
                     <div className="carousel" onClick={() => setClicked(c => !c)}>
                         <div className="carousel-track">
                             {CtlImg.map((item, index) => (
@@ -19,8 +19,8 @@ const Index = () => {
                                     style={{ background: item.bacround, opacity: 0.9 }}
                                     key={index}
                                 >
-                                    <div className="card_header mb-[16px]">
-                                        <h1 className="text-[#000] text-[20px] not-italic font-normal leading-normal">{item.title}</h1>
+                                    <div className="card_header mb-[16px] ">
+                                        <h1 className="text-[#000] sm:text-[14px] text-[20px] not-italic font-normal leading-normal">{item.title}</h1>
                                     </div>
                                     <div className="card_footer flex justify-center items-center">
                                         <Image src={item.img} alt={item.title} width={126} height={102} />
@@ -34,18 +34,59 @@ const Index = () => {
                                     key={index}
                                 >
                                     <div className="card_header mb-[16px]">
-                                        <h1 className="text-[#000] text-[20px] not-italic font-normal leading-normal">{item.title}</h1>
+                                        <h1 className="text-[#000]  text-[20px] sm:text-[14px]  not-italic font-normal leading-normal">{item.title}</h1>
                                     </div>
                                     <div className="card_footer flex justify-center items-center">
-                                        <Image src={item.img} alt={item.title} width={126} height={102} />
+                                        <Image src={item.img} alt={item.title} width={126} height={102} className="sm:w-[112px] sm:h-[82]" />
+                                    </div>
+                                </div>
+                            ))}
+                               {CtlImg.map((item, index) => (
+                                <div
+                                    className="card"
+                                    style={{ background: item.bacround, opacity: 0.9 }}
+                                    key={index}
+                                >
+                                    <div className="card_header mb-[16px]">
+                                        <h1 className="text-[#000]  text-[20px] sm:text-[14px]  not-italic font-normal leading-normal">{item.title}</h1>
+                                    </div>
+                                    <div className="card_footer flex justify-center items-center">
+                                        <Image src={item.img} alt={item.title} width={126} height={102} className="sm:w-[112px] sm:h-[82]" />
+                                    </div>
+                                </div>
+                            ))}
+                             {CtlImg.map((item, index) => (
+                                <div
+                                    className="card"
+                                    style={{ background: item.bacround, opacity: 0.9 }}
+                                    key={index}
+                                >
+                                    <div className="card_header mb-[16px]">
+                                        <h1 className="text-[#000]  text-[20px] sm:text-[14px]  not-italic font-normal leading-normal">{item.title}</h1>
+                                    </div>
+                                    <div className="card_footer flex justify-center items-center">
+                                        <Image src={item.img} alt={item.title} width={126} height={102} className="sm:w-[112px] sm:h-[82]" />
+                                    </div>
+                                </div>
+                            ))}
+                             {CtlImg.map((item, index) => (
+                                <div
+                                    className="card"
+                                    style={{ background: item.bacround, opacity: 0.9 }}
+                                    key={index}
+                                >
+                                    <div className="card_header mb-[16px]">
+                                        <h1 className="text-[#000]  text-[20px] sm:text-[14px]  not-italic font-normal leading-normal">{item.title}</h1>
+                                    </div>
+                                    <div className="card_footer flex justify-center items-center">
+                                        <Image src={item.img} alt={item.title} width={126} height={102} className="sm:w-[112px] sm:h-[82]" />
                                     </div>
                                 </div>
                             ))}
                         </div>
                     </div>
-                </main>
             </div>
-
+            </main>
             <style jsx>{`
                 .carousel {
                     width: 100%;

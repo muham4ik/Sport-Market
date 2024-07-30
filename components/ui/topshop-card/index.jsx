@@ -6,7 +6,7 @@ import { Korzina } from "@/public/assets"
 const index = () => {
   return (
     <>
-      <div className="cards flex items-center gap-[24px]">
+      <div className="cards flex sm:flex-col items-center gap-[24px]">
         {
           TopShopImg.map((item, index) => (
             <div className="card rounded-[5px] bg-[#ffff]" key={index}>

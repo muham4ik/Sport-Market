@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { Header, Footer, Navigate } from "@/components"
+import { Header, Footer} from "@/components"
 import { Hom, Right ,Trash ,Location ,Clik ,Payme} from "@/public/assets"
 import { useState } from "react";
 import { OrgImg } from "@/public/korzina-image";
@@ -17,10 +17,10 @@ const Page = () => {
   };
   return (
     <>
+      <div className="main mt-[200px] sm:mt-[260px]">
       <Header />
-      <Navigate />
       <div className="container">
-        <ul className="navigate flex items-center gap-[6px] py-[20px]">
+        <ul className="navigate flex items-center sm:mx-3 gap-[6px] py-[20px]">
           <li className="flex gap-[6px] items-center">
             <Image src={Hom} alt="Home icon" />
             <p className="text-[16px] not-italic font-normal leading-normal text-[#000]">Главная</p>
@@ -31,47 +31,48 @@ const Page = () => {
           </li>
         </ul>
 
-        <div className="korzina flex items-start gap-[24px] mb-[120px]">
-          <div className="korzine_left flex flex-col gap-[15px] py-[20px] px-[30px] bg-white rounded-[8px]">
-            <ul className="flex justify-between">
-              <li><h1 className="text-[24px] font-medium">Ваша корзина</h1></li>
+        <div className="korzina flex items-start gap-[24px] mb-[120px] sm:mb-[40px] sm:w-[300px] sm:flex-col sm:mx-auto">
+          <div className="korzine_left flex flex-col gap-[15px] sm:w-[300px] sm:px-2 py-[20px] px-[30px] bg-white rounded-[8px]">
+            <ul className="flex justify-between sm:justify-start sm:gap-[40px] items-center">
+              <li><h1 className="text-[24px] sm:text-[20px] font-medium">Ваша корзина</h1></li>
               <li><p className="text-[14px] text-[#FF1313] not-italic">Очистить все</p></li>
             </ul>
-            <div className="korzina_product flex flex-col">
+            <div className="korzina_product flex flex-col bg-[#fff] gap-[12px] rounded-lg">
               {OrgImg.map((item, index) => (
-                <ul key={index} className="flex items-center gap-[22px] p-[10px] bg-[#F2F2F2]">
-                  <Image src={item.image} alt={`Product image ${index + 1}`} width={145} />
-                  <li className="flex flex-col gap-[29px]">
-                    <h1 className="text-[20px] text-[#1F1D14]">Гантель виниловая, 2 х 3 кг Гантель </h1>
-                    <div className="flex items-center gap-[40px]">
-                      <ul className="flex items-center gap-[25px]">
-                        <button onClick={handleDecrease} className="text-[22px]">-</button>
-                        <p className="text-[20px]">{quantity}</p>
-                        <button onClick={handleIncrease} className="text-[22px]">+</button>
+                <ul key={index} className="flex items-center gap-[22px] sm:gap-3 sm:p-2 p-[10px] bg-[#F2F2F2]">
+                  <Image src={item.image} alt={`Product image ${index + 1}`} className="sm:w-[85px]" width={145} />
+                  <li className="flex flex-col sm:gap-[15px] gap-[29px]">
+                    <h1 className="text-[20px] sm:text-[15px] sm:leading-normal text-[#1F1D14]">Гантель виниловая, 2 х 3 кг Гантель </h1>
+                    <div className="flex items-center sm:gap-[10px] gap-[40px]">
+                      <ul className="flex items-center sm:gap-[10px] gap-[25px]">
+                        <button onClick={handleDecrease} className="text-[22px] sm:text-[14px]">-</button>
+                        <p className="text-[20px] sm:text-[16px]">{quantity}</p>
+                        <button onClick={handleIncrease} className="text-[22px] sm:text-[14px]">+</button>
                       </ul>
                       <div className="flex items-center gap-[5px]">
-                        <h1 className="text-[22px] font-bold text-[#000]">300 000</h1>
-                        <span className="text-[16px]">uzs</span>
+                        <h1 className="text-[22px] font-bold text-[#000] sm:text-[15px] sm:leading-normal sm:font-medium">300 000</h1>
+                        <span className="text-[16px] sm:text-[14px]">uzs</span>
                       </div>
                     </div>
                   </li>
-                  <li className="rounded-[50%] p-[9px] bg-white">
+                  <li className="rounded-[50%] ml-[200px] sm:ml-0 sm:p-2 p-[9px] bg-white">
                     <Image src={Trash} alt="Trash icon" width={18} />
                   </li>
                 </ul>
               ))}
             </div>
-            <ul className="flex flex-col py-[63px] pr-[400px] gap-[20px]">
-              <Link href="#" className="text-[20px] border-b-[#06F] text-[#06F] border-b">
+            <ul className="flex flex-col py-[63px] sm:py-5 pr-[400px] sm:px-2 gap-[20px]">
+              <Link href="#" className="text-[20px] w-[277px] sm:w-full sm:text-[18px] sm:text-center border-b-[#06F] text-[#06F] border-b">
                 Все информация о доставке
               </Link>
-              <p className="text-[#000] text-[20px]">
+              <p className="text-[#000] text-[20px] sm:text-[17px] sm:text-center">
                 Если у вас имеется вопросы позаоните по номеру:
-                <Link href="#">+998 (99) 995 55 65</Link>
+                <Link href="tel:+998999955565" className="sm:hidden">+998 (99) 995 55 65</Link>
               </p>
+              <Link href="tel:+998999955565" className="hidden sm:block sm:text-center sm:font-semibold">+998 (99) 995 55 65</Link>
             </ul>
           </div>
-          <div className="korzina_right flex flex-col py-[20px] px-[40px] bg-white rounded-[8px]">
+          <div className="korzina_right flex flex-col py-[20px] px-2 bg-white rounded-[8px]">
             <h1 className="text-[20px] font-medium text-[#1F1D14]">Итого</h1>
             <ul className="flex justify-between">
               <li className="flex flex-col gap-[5px] mt-[15px]">
@@ -128,6 +129,7 @@ const Page = () => {
         </div>
       </div>
       <Footer />
+      </div>
     </>
   )
 }

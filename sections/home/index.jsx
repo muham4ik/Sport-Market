@@ -24,7 +24,7 @@ const index = () => {
   const imgList = [Butsa, Butsa, Butsa, Butsa, Butsa];
 
   return (
-    <div className="main mb-[83px] mt-[20px]">
+    <div className="main mb-[83px]  sm:mb-[20px] mt-[250px]">
       <div className="container mt-[40px]">
         <Swiper
           modules={[Navigation, Pagination, Scrollbar, Parallax, A11y, Autoplay]}
@@ -33,43 +33,44 @@ const index = () => {
           parallax={true}
           pagination={{ clickable: true }}
           autoplay={{ delay: 2000, disableOnInteraction: false }}
+          loop={true}
           className="w-full"
         >
-         {imgList.map((item, index) => (
-  <SwiperSlide key={index} className="w-full rounded-2xl">
-    <div className="flex flex-col lg:flex-row items-center justify-between h-[300px] sm:h-[400px] md:h-[488px] w-full rounded-2xl overflow-hidden bg-gray-100">
-      <div className="flex-1 p-5 lg:pl-16">
-        <h1 className="text-lg lg:text-2xl font-extrabold">
-          Бутсы Nike Phantom <br />
-          GT2 Elite FG
-        </h1>
-        <button className="py-2.5 mt-4 lg:mt-6 px-5 rounded-md border-2 border-yellow-400">
-          Подробности
-        </button>
-      </div>
-      <div className="relative flex-1 h-full w-full lg:w-auto">
-        <div className=" hidden sm:hidden lg:block absolute top-8 right-2 lg:right-auto lg:left-2 w-[100px] h-[100px] sm:w-[150px] sm:h-[150px] lg:w-[380px] lg:h-[380px] rounded-full bg-red-500 z-0"></div>
-        <div className="  hidden sm:hidden lg:block  absolute top-[-20px] right-[20px] lg:right-auto  sm:left-[60px] md:left-[80px] lg:left-[130px] rotate-12 w-[80px] sm:w-[120px] md:w-[150px] lg:w-[355px] h-[200px] sm:h-[300px] md:h-[400px] lg:h-[921px] bg-green-500 z-0"></div>
-        <div className="relative z-10 pr-5 flex justify-center items-center h-full">
-          <div className="w-[160px] sm:w-[200px] md:w-[250px] lg:w-[400px]">
-            <Image
-              src={item}
-              alt="Carusel img"
-              layout="responsive"
-              width={438}
-              height={438}
-              objectFit="contain"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-  </SwiperSlide>
-))}
+          {imgList.map((item, index) => (
+            <SwiperSlide key={index} className="w-full rounded-2xl">
+              <div className="flex flex-col lg:flex-row items-center justify-between h-[300px] sm:h-[400px] md:h-[488px] w-full rounded-2xl overflow-hidden bg-[#fff]">
+                <div className="flex-1 sm:flex sm:flex-col sm:justify-center sm:items-center p-5 lg:pl-16">
+                  <h1 className="text-lg lg:text-4xl sm:text-[24px]  text-center font-extrabold">
+                    Бутсы Nike Phantom
+                    GT2 Elite FG
+                  </h1>
+                  <button className="py-2.5 mt-4 ml-[150px] sm:ml-0  hover: lg:mt-6 px-5 w-[300px] flex items-center justify-center bg-[#FBD029] hover:bg-transparent  rounded-md border-2 border-yellow-400">
+                    Подробности
+                  </button>
+                </div>
+                <div className="relative flex-1 h-full w-full lg:w-auto">
+                  <div className=" hidden sm:hidden lg:block absolute top-8 right-2 lg:right-auto lg:left-2 w-[100px] h-[100px] sm:w-[150px] sm:h-[150px] lg:w-[380px] lg:h-[380px] rounded-full bg-red-500 z-0"></div>
+                  <div className="  hidden sm:hidden lg:block  absolute top-[20px]  right-[20px] lg:right-auto  sm:left-[60px] md:left-[80px] lg:left-[130px] rotate-12 w-[80px] sm:w-[120px] md:w-[150px] lg:w-[355px] h-[200px] sm:h-[300px] md:h-[400px] lg:h-[921px] bg-green-500 z-0"></div>
+                  <div className="relative z-10 pr-5 flex justify-center items-center h-full">
+                    <div className="w-[160px] sm:w-[200px] md:w-[250px] lg:w-[400px]">
+                      <Image
+                        src={item}
+                        alt="Carusel img"
+                        layout="responsive"
+                        width={438}
+                        height={438}
+                        objectFit="contain"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
     </div>
-    
+
   );
 };
 

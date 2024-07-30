@@ -9,30 +9,30 @@ export default function Index() {
 
   return (
     <>
-    <div className="container">
-    <main className="mb-[80px] bg-[#ffff]">
-        <div className="carousel" onClick={() => setClicked((c) => !c)}>
-          <div className="carousel-track">
-            <Image src={Adidas} alt="Adidas" />
-            <Image src={Armound} alt="Armound" />
-            <Image src={Reebok} alt="Reebok" />
-            <Image src={Puma} alt="Puma" />
-            <Image src={Nike} alt="Nike" />
-            <Image src={Adidas} alt="Adidas" /> {/* Tasvirlarni takrorlash uchun */}
-            <Image src={Armound} alt="Armound" />
-            <Image src={Reebok} alt="Reebok" />
-            <Image src={Puma} alt="Puma" />
-            <Image src={Nike} alt="Nike" />
-            <Image src={Adidas} alt="Adidas" /> {/* Tasvirlarni takrorlash uchun */}
-            <Image src={Armound} alt="Armound" />
-            <Image src={Reebok} alt="Reebok" />
-            <Image src={Puma} alt="Puma" />
-            <Image src={Nike} alt="Nike" />
+      <div className="container">
+        <main className="mb-[80px] bg-[#ffff]">
+          <div className="carousel" onClick={() => setClicked((c) => !c)}>
+            <div className="carousel-track sm:gap-[50px]">
+              <Image src={Adidas} alt="Adidas" />
+              <Image src={Armound} alt="Armound" />
+              <Image src={Reebok} alt="Reebok" />
+              <Image src={Puma} alt="Puma" />
+              <Image src={Nike} alt="Nike" />
+              <Image src={Adidas} alt="Adidas" /> {/* Tasvirlarni takrorlash uchun */}
+              <Image src={Armound} alt="Armound" />
+              <Image src={Reebok} alt="Reebok" />
+              <Image src={Puma} alt="Puma" />
+              <Image src={Nike} alt="Nike" />
+              <Image src={Adidas} alt="Adidas" /> {/* Tasvirlarni takrorlash uchun */}
+              <Image src={Armound} alt="Armound" />
+              <Image src={Reebok} alt="Reebok" />
+              <Image src={Puma} alt="Puma" />
+              <Image src={Nike} alt="Nike" />
+            </div>
           </div>
-        </div>
-      </main>
-    </div>
-      
+        </main>
+      </div>
+
 
       <style jsx>{`
         .carousel {

@@ -1,15 +1,15 @@
 import React from 'react'
 import Image from 'next/image'
 import { Hom, Right, Shaxzod } from "@/public/assets"
-import { ProductsCard, Header, Footer, Navigate } from "@/components"
+import { ProductsCard, Header, Footer} from "@/components"
 
 const page = () => {
     return (
         <>
-            <Header />
-            <Navigate />
+         <div className="main mt-[200px] sm:mt-[250px]">
+         <Header />
             <div className="container">
-                <ul className="navigate flex items-center gap-[6px] py-[20px]">
+                <ul className="navigate flex items-center gap-[6px] py-[20px] sm:mx-3">
                     <li className="flex gap-[6px] items-center">
                         <Image src={Hom} alt="Home icon" />
                         <p className="text-[16px] not-italic font-normal leading-normal text-[#000]">Главная</p>
@@ -19,24 +19,24 @@ const page = () => {
                         <p className="text-[16px] not-italic font-normal leading-normal text-[#1F1D14]">Гантель виниловая, 2 х 3 кг</p>
                     </li>
                 </ul>
-                <div className="cards flex gap-[24px] mb-[81px]">
+                <div className="cards flex sm:flex-col  gap-[24px] mb-[81px]">
                     <div className="cards_left flex flex-col gap-[31px]">
-                        <h1 className='text-[32px] font-medium'>
+                        <h1 className='text-[32px] font-medium sm:text-center'>
                             Описание
                         </h1>
-                        <div className="card flex flex-col gap-[53px] pr-[140px] pt-[40px] pb-[116px] pl-[70px] bg-[#fff]">
+                        <div className="card flex flex-col sm:w-[300px] sm:mx-auto sm:p-4 gap-[53px] pr-[140px] pt-[40px] pb-[116px] pl-[70px] bg-[#fff]">
                             <div className="card_header flex flex-col gap-[28px] ">
-                                <h1 className='text-[24px] not-italic font-medium text-[#1F1D14]'>Гантель виниловая, 2 х 3 кг</h1>
-                                <li className='text-[16px]'>В составе томатов в большом количестве содержатся сахара, клетчатка, пектины, бета-каротин, витамины.</li>
+                                <h1 className='text-[24px] not-italic font-medium text-[#1F1D14] sm:text-[20px]'>Гантель виниловая, 2 х 3 кг</h1>
+                                <li className='text-[16px] sm:text-center'>В составе томатов в большом количестве содержатся сахара, клетчатка, пектины, бета-каротин, витамины.</li>
                             </div>
                             <div className="card_footer flex items-center gap-[60px]">
                                 <ul className='flex items-center flex-col gap-[30px]'>
                                     <li className='flex flex-col gap-[10px]'>
-                                        <h1 className='text-[20px] font-medium text-[#1F1D14]'>Вес гантела:</h1>
+                                        <h1 className='text-[20px] font-medium text-[#1F1D14] '>Вес гантела:</h1>
                                         <p className='text-[16px] text-[#1F1D14]'>5кг</p>
                                     </li>
                                     <li className='flex flex-col gap-[10px]'>
-                                        <h1 className='text-[20px] font-medium text-[#1F1D14]'>Вес гантела:</h1>
+                                        <h1 className='text-[20px] font-medium text-[#1F1D14] '>Вес гантела:</h1>
                                         <p className='text-[16px] text-[#1F1D14]'>5кг</p>
                                     </li>
                                 </ul>
@@ -54,10 +54,10 @@ const page = () => {
                         </div>
                     </div>
                     <div className="cards_right flex flex-col gap-[31px]">
-                        <h1 className='text-[32px] font-medium'>
+                        <h1 className='text-[32px] font-medium sm:text-center'>
                             Отзыви
                         </h1>
-                        <div className="card flex flex-col pr-[140px] pt-[40px] pb-[38px] pl-[70px] bg-[#fff] ">
+                        <div className="card flex flex-col sm:w-[300px] sm:p-4 sm:mx-auto pr-[140px] pt-[40px] pb-[38px] pl-[70px] bg-[#fff] ">
                             <div className="card_header flex items-start gap-[12px]">
                                 <Image src={Shaxzod} alt="Shaxzod Anvarov" />
                                 <ul className='flex flex-col gap-[13px]'>
@@ -102,11 +102,12 @@ const page = () => {
                 </div>
 
                 <div className="cards flex flex-col gap-[30px] mb-[160px]">
-                    <h1 className='text-[32px] font-medium text-[#1F1D14]'>Похожие продукты</h1>
+                    <h1 className='text-[32px] font-medium text-[#1F1D14] sm:text-center'>Похожие продукты</h1>
                     <ProductsCard />
                 </div>
             </div>
             <Footer />
+         </div>
         </>
     )
 }

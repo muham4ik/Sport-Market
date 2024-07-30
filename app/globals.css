@@ -26,6 +26,10 @@
 
 body {
   background: #F2F2F2;
+    overflow-x: hidden;
+}
+html,body{
+  overflow-x: hidden;
 }
 
 .swiper_container {

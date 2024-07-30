@@ -50,7 +50,8 @@ const Page = () => { // Kichik harf bilan yozilgan `page` o'rniga katta harf bil
 
     return (
         <>
-            <Header />
+        <div className="main mt-[200px] sm:mt-[260px]">
+        <Header />
             <div className="container">
                 <ul className="navigate flex items-center gap-[6px] py-[20px]">
                     <li className="flex gap-[6px] items-center">
@@ -62,7 +63,7 @@ const Page = () => { // Kichik harf bilan yozilgan `page` o'rniga katta harf bil
                         <p className="text-[16px] not-italic font-normal leading-normal text-[#1F1D14]">Полезные информации</p>
                     </li>
                 </ul>
-                <div className="products flex gap-[24px]">
+                <div className="products flex sm:flex-col sm:justify-center sm:items-center gap-[24px]">
                     <div className="products_left">
                         <form action="" className='bg-[#fff] py-[19px] pb-[38px] px-[18px] rounded-[8px] flex flex-col gap-[16px] w-[292px] '>
                             <h1 className='text-[16px] not-italic font-normal leading-normal text-[#000]'>
@@ -99,7 +100,7 @@ const Page = () => { // Kichik harf bilan yozilgan `page` o'rniga katta harf bil
                             <ul className='flex flex-col items-start gap-[16px] p-0 w-full'>
                                 <li className='w-full flex flex-col gap-[10px]'>
                                     <h1 className='text-[16px] not-italic font-normal leading-normal text-[#000]'>Артикул:</h1>
-                                    <input type="text" placeholder=' Все' className='placeholder:text-black p-1 h-[40px] bg-[#2f2f2f] border outline-none rounded-[5px]' />
+                                    <input type="text" placeholder=' Все' className='placeholder:text-black p-1 h-[40px] bg-[#fff] border outline-none rounded-[5px]' />
                                 </li>
                                 <li className='w-full flex flex-col gap-[10px]'>
                                     <h1 className='text-[16px] not-italic font-normal leading-normal text-[#000]'>Выберите категорию:</h1>
@@ -130,8 +131,8 @@ const Page = () => { // Kichik harf bilan yozilgan `page` o'rniga katta harf bil
                         <button className='flex w-[292px] justify-center rounded-[5px] rounded-t-[0] bg-[#E4E4E4] opacity-[0.9] py-[15px] px-[77px] text-[15px] font-normal leading-normal text-[#000]'>Показать результат</button>
                     </div>
                     <div className="products_right w-full flex flex-col gap-[17px]">
-                        <div className="products_right-top">
-                            <ul className='flex items-center gap-[24px]'>
+                        <div className="products_right-top sm:justify-center sm:p-10">
+                            <ul className='flex items-center gap-[24px] sm:flex-col'>
                                 <select name="" id="" className='py-[7px] px-[15px] rounded-[4px]'>
                                     <option value="" className='text-[16px] not-italic font-normal leading-normal'>Сортировать</option>
                                 </select>
@@ -139,7 +140,7 @@ const Page = () => { // Kichik harf bilan yozilgan `page` o'rniga katta harf bil
                                     <option value="" className='text-[16px] not-italic font-normal leading-normal'>Все продукты</option>
                                 </select>
                             </ul>
-                            <ul className='flex items-center gap-[24px]'>
+                            <ul className='flex items-center gap-[24px] sm:flex-col'>
                                 <li className='flex items-center py-[7px] px-[15px] bg-white gap-[5px] rounded-[4px]'>
                                     <p className='text-[16px]'>Кард</p>
                                     <Image src={Board} alt="Board view" />
@@ -161,11 +162,13 @@ const Page = () => { // Kichik harf bilan yozilgan `page` o'rniga katta harf bil
                     </div>
                 </div>
                 <div className="product_bottom mt-[111px] flex flex-col gap-[60px] mb-[208px]">
-                    <h1 className='text-[31px] text-[#1F1D14] not-italic font-medium'>Реконмендуемые продукты</h1>
+                    <h1 className='text-[31px] text-[#1F1D14] not-italic font-medium sm:text-center'>Реконмендуемые продукты</h1>
                     <ProductsCard />
                 </div>
             </div>
             <Footer />
+        </div>
+          
         </>
     );
 };

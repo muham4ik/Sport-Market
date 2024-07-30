@@ -5,7 +5,7 @@ import { Korzina } from "@/public/assets"
 const index = () => {
   return (
     <>
-      <div className="cards flex items-center gap-[35px]">
+      <div className="cards flex sm:flex-col items-center gap-[35px]">
         {
           ProductImg.map((item, index) => (
             <div className="card rounded-[5px] w-[292px] bg-[#ffff]" key={index}>

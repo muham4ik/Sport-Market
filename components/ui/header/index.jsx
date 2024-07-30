@@ -6,7 +6,11 @@ import Link from 'next/link';
 import Logo from '../../../public/assets/icons/logo.svg';
 import Tel from '../../../public/assets/icons/phone.svg';
 import Mail from '../../../public/assets/icons/mail.svg';
-
+import Layer from "../../../public/assets/icons/layers.svg";
+import Search from "../../../public/assets/icons/search.svg";
+import User from "../../../public/assets/icons/user.svg";
+import Wishlist from "../../../public/assets/icons/heart.svg";
+import Korzinka from "../../../public/assets/icons/shopping.svg";
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -41,10 +45,10 @@ const Index = () => {
   }, [isMenuOpen]);
 
   return (
-    <header className="bg-[#1F1D14] w-full sticky top-0 z-[99999]">
+    <header className="bg-[#1F1D14] w-full fixed top-0 z-[99999]">
       <div className="container">
         <nav className="navbar flex items-center justify-between py-[10px] md:py-[20px]">
-          <Link href="#" className="flex items-center gap-[11px] mr-[53px]">
+          <Link href="/" className="flex items-center gap-[11px] mr-[53px]">
             <Image src={Logo} width={"62px"} height={"54px"} alt="logo" />
             <div className="flex flex-col items-start text-2xl font-semibold text-white">
               <p>Sport</p>
@@ -52,11 +56,11 @@ const Index = () => {
             </div>
           </Link>
           <ul className="hidden md:flex items-center gap-[30px] mr-[224.5px]">
-            <Link href="#" className="text-[16px] font-normal leading-normal text-white hover:text-gray-400 transition-colors duration-300">Продукты</Link>
-            <Link href="#" className="text-[16px] font-normal leading-normal text-white hover:text-gray-400 transition-colors duration-300">Контакты</Link>
-            <Link href="#" className="text-[16px] font-normal leading-normal text-white hover:text-gray-400 transition-colors duration-300">Оплата и Доставка</Link>
-            <Link href="#" className="text-[16px] font-normal leading-normal text-white hover:text-gray-400 transition-colors duration-300">Новости</Link>
-            <Link href="#" className="text-[16px] font-normal leading-normal text-white hover:text-gray-400 transition-colors duration-300">О нас</Link>
+            <Link href="/product" className="text-[16px] font-normal leading-normal text-white hover:text-gray-400 transition-colors duration-300">Продукты</Link>
+            <Link href="#footer" className="text-[16px] font-normal leading-normal text-white hover:text-gray-400 transition-colors duration-300">Контакты</Link>
+            <Link href="/delivery" className="text-[16px] font-normal leading-normal text-white hover:text-gray-400 transition-colors duration-300">Оплата и Доставка</Link>
+            <Link href="/#" className="text-[16px] font-normal leading-normal text-white hover:text-gray-400 transition-colors duration-300">Новости</Link>
+            <Link href="/about" className="text-[16px] font-normal leading-normal text-white hover:text-gray-400 transition-colors duration-300">О нас</Link>
           </ul>
           <ul className="hidden md:flex items-center gap-[30px]">
             <Link href="tel:+998905658585" className="flex items-center gap-[5px] text-white text-[16px] font-normal leading-normal hover:text-gray-400 transition-colors duration-300">
@@ -90,11 +94,11 @@ const Index = () => {
             &times;
           </button>
           <ul className="flex flex-col items-center gap-4">
-            <Link href="#" className="text-[24px] font-normal leading-normal text-white hover:text-gray-400 transition-colors duration-300">Продукты</Link>
-            <Link href="#" className="text-[24px] font-normal leading-normal text-white hover:text-gray-400 transition-colors duration-300">Контакты</Link>
-            <Link href="#" className="text-[24px] font-normal leading-normal text-white hover:text-gray-400 transition-colors duration-300">Оплата и Доставка</Link>
-            <Link href="#" className="text-[24px] font-normal leading-normal text-white hover:text-gray-400 transition-colors duration-300">Новости</Link>
-            <Link href="#" className="text-[24px] font-normal leading-normal text-white hover:text-gray-400 transition-colors duration-300">О нас</Link>
+            <Link href="/product" className="text-[24px] font-normal leading-normal text-white hover:text-gray-400 transition-colors duration-300">Продукты</Link>
+            <Link href="#footer" className="text-[24px] font-normal leading-normal text-white hover:text-gray-400 transition-colors duration-300">Контакты</Link>
+            <Link href="/delivery" className="text-[24px] font-normal leading-normal text-white hover:text-gray-400 transition-colors duration-300">Оплата и Доставка</Link>
+            <Link href="/#" className="text-[24px] font-normal leading-normal text-white hover:text-gray-400 transition-colors duration-300">Новости</Link>
+            <Link href="/about" className="text-[24px] font-normal leading-normal text-white hover:text-gray-400 transition-colors duration-300">О нас</Link>
             <Link href="tel:+998905658585" className="flex items-center gap-[5px] text-white text-[24px] font-normal leading-normal hover:text-gray-400 transition-colors duration-300">
               <Image src={Tel} width={"24px"} height={"24px"} alt="phone" />
               <p>+998 (90) 565-85-85</p>
@@ -106,6 +110,44 @@ const Index = () => {
           </ul>
         </div>
       </div>
+      <div className="main w-full bg-white z-[9999]">
+      <div className="container">
+        <nav className="navbar flex items-center py-[15px] justify-between">
+          <ul className="flex items-center gap-[10px] flex-wrap">
+            <button className="inline-flex justify-center items-center gap-[10px] py-[15px] px-[40px] bg-[#1F1D14] rounded-[5px]">
+              <Image src={Layer} alt="layer" />
+              <p className="text-[20px] not-italic font-normal leading-normal text-white">
+                Каталог
+              </p>
+            </button>
+            <div className="inpt flex items-center py-[17px] px-[20px] w-full md:w-[502px] border rounded-[5px] mt-4 md:mt-0">
+              <input
+                type="text"
+                placeholder="Поиск"
+                className="outline-none border-none bg-transparent w-full mr-[5px]"
+              />
+              <button className="p-[4px]">
+                <Image src={Search} alt="search" />
+              </button>
+            </div>
+          </ul>
+          <ul className="flex items-center gap-[13px] flex-wrap mt-4 md:mt-0">
+            <button className="py-[13px] px-[12px] rounded-[3px] bg-[#F2F2F2]">
+              <Image src={User} alt="user"/>
+            </button>
+            <button className="py-[13px] px-[12px] rounded-[3px] bg-[#F2F2F2]">
+              <Image src={Wishlist} alt="wishlist" />
+            </button>
+            <button className="flex items-center py-[15px] px-[30px] gap-[5px] rounded-[5px] ml-[25px] bg-[#F2F2F2] justify-center">
+              <Image src={Korzinka} alt="korzina" />
+              <p className="text-[20px] not-italic font-normal leading-normal text-[#1F1D14]">
+                Корзина
+              </p>
+            </button>
+          </ul>
+        </nav>
+      </div>
+    </div>
     </header>
   );
 };
