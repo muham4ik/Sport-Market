@@ -110,7 +110,7 @@ const Index = () => {
           </ul>
         </div>
       </div>
-      <div className="main w-full bg-white z-[9999]">
+      <div className="main w-full bg-white z-[9999] sm:hidden">
       <div className="container">
         <nav className="navbar flex items-center py-[15px] justify-between">
           <ul className="flex items-center gap-[10px] flex-wrap">
