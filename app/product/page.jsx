@@ -8,6 +8,7 @@ import { styled } from '@mui/material/styles';
 import { Hom, Right, Board, Listt } from "@/public/assets"
 import { ProductCard, ProductsCard } from '@/components';
 import "./index.css"
+import Link from 'next/link';
 
 const CustomSlider = styled(Slider)(({ theme }) => ({
     color: theme.palette.primary.main,
@@ -50,13 +51,13 @@ const Page = () => { // Kichik harf bilan yozilgan `page` o'rniga katta harf bil
 
     return (
         <>
-        <div className="main mt-[200px] sm:mt-[260px]">
+        <div className="main mt-[200px] sm:mt-[180px]">
         <Header />
             <div className="container">
-                <ul className="navigate flex items-center gap-[6px] py-[20px]">
+                <ul className="navigate flex items-center gap-[6px] sm:mx-4 py-[20px]">
                     <li className="flex gap-[6px] items-center">
                         <Image src={Hom} alt="Home icon" />
-                        <p className="text-[16px] not-italic font-normal leading-normal text-[#000]">Главная</p>
+                        <Link href="/" className="text-[16px] not-italic font-normal leading-normal text-[#000]">Главная</Link>
                     </li>
                     <li className="flex gap-[6px] items-center">
                         <Image src={Right} alt="Right arrow icon" width={16} height={16} />

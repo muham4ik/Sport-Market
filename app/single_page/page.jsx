@@ -2,17 +2,18 @@ import React from 'react'
 import Image from 'next/image'
 import { Hom, Right, Shaxzod } from "@/public/assets"
 import { ProductsCard, Header, Footer} from "@/components"
+import Link from 'next/link'
 
 const page = () => {
     return (
         <>
-         <div className="main mt-[200px] sm:mt-[250px]">
+         <div className="main mt-[200px] sm:mt-[180px]">
          <Header />
             <div className="container">
                 <ul className="navigate flex items-center gap-[6px] py-[20px] sm:mx-3">
                     <li className="flex gap-[6px] items-center">
                         <Image src={Hom} alt="Home icon" />
-                        <p className="text-[16px] not-italic font-normal leading-normal text-[#000]">Главная</p>
+                        <Link href="/" className="text-[16px] not-italic font-normal leading-normal text-[#000]">Главная</Link>
                     </li>
                     <li className="flex gap-[6px] items-center">
                         <Image src={Right} alt="Right arrow icon" width={16} height={16} />

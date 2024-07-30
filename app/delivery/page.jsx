@@ -7,7 +7,7 @@ import Card from "../../components/ui/card";
 const Index = () => {
   return (
     <>
-    <div className="main mt-[200px] sm:mt-[260px]">
+    <div className="main mt-[200px] sm:mt-[180px]">
     <Header />
       <div className="container">
         <ul className="navigate flex items-center gap-[6px] py-[20px] sm:px-4">
@@ -17,7 +17,7 @@ const Index = () => {
           </li>
           <li className="flex gap-[6px] items-center">
             <Image src={Right} alt='Right arrow icon' width={16} height={16} />
-            <p className="text-[16px] not-italic font-normal leading-normal text-[#1F1D14]">О нас</p>
+            <Link href="/" className="text-[16px] not-italic font-normal leading-normal text-[#000]">Главная</Link>
           </li>
         </ul>
 

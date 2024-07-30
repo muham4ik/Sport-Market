@@ -7,14 +7,14 @@ import Link from "next/link";
 const Page = () => {
     return (
         <>
-        <div className="main mt-[220px] sm:mt-[280px]">
+        <div className="main mt-[220px] sm:mt-[200px]">
         <Header />
             <div className="main mt-[27px] mb-[80px]">
                 <div className="container ">
                     <ul className="navigate flex items-center gap-[6px] sm:px-4">
                         <li className="flex gap-[6px] items-center">
                             <Image src={Hom} alt="Home icon" />
-                            <p className="text-[16px] not-italic font-normal leading-normal text-[#000]">Главная</p>
+                            <Link href="/" className="text-[16px] not-italic font-normal leading-normal text-[#000]">Главная</Link>
                         </li>
                         <li className="flex gap-[6px] items-center">
                             <Image src={Right} width={16} height={16} alt="Right arrow icon" />

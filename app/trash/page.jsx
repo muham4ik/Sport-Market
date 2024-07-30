@@ -17,13 +17,13 @@ const Page = () => {
   };
   return (
     <>
-      <div className="main mt-[200px] sm:mt-[260px]">
+      <div className="main mt-[200px] sm:mt-[180px]">
       <Header />
       <div className="container">
         <ul className="navigate flex items-center sm:mx-3 gap-[6px] py-[20px]">
           <li className="flex gap-[6px] items-center">
             <Image src={Hom} alt="Home icon" />
-            <p className="text-[16px] not-italic font-normal leading-normal text-[#000]">Главная</p>
+            <Link href="/" className="text-[16px] not-italic font-normal leading-normal text-[#000]">Главная</Link>
           </li>
           <li className="flex gap-[6px] items-center">
             <Image src={Right} alt="Right arrow icon" width={16} height={16} />

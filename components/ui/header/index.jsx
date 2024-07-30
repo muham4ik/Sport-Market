@@ -46,7 +46,7 @@ const Index = () => {
 
   return (
     <header className="bg-[#1F1D14] w-full fixed top-0 z-[99999]">
-      <div className="container">
+      <div className="container sm:px-4">
         <nav className="navbar flex items-center justify-between py-[10px] md:py-[20px]">
           <Link href="/" className="flex items-center gap-[11px] mr-[53px]">
             <Image src={Logo} width={"62px"} height={"54px"} alt="logo" />
@@ -110,17 +110,17 @@ const Index = () => {
           </ul>
         </div>
       </div>
-      <div className="main w-full bg-white z-[9999] sm:hidden">
-      <div className="container">
-        <nav className="navbar flex items-center py-[15px] justify-between">
-          <ul className="flex items-center gap-[10px] flex-wrap">
-            <button className="inline-flex justify-center items-center gap-[10px] py-[15px] px-[40px] bg-[#1F1D14] rounded-[5px]">
+      <div className="main w-full bg-white z-[9999]">
+      <div className="container sm:px-4">
+        <nav className="navbar flex items-center sm:py-1 py-[15px] justify-between">
+          <ul className="flex items-center sm:gap-[4px] gap-[10px] flex-wrap">
+            <button className="inline-flex justify-center items-center sm:gap-[5px] gap-[10px] sm:py-[8px] py-[15px] px-[40px] bg-[#1F1D14] rounded-[5px]">
               <Image src={Layer} alt="layer" />
-              <p className="text-[20px] not-italic font-normal leading-normal text-white">
+              <p className="text-[20px] not-italic font-normal sm:text-[16px] leading-normal text-white">
                 Каталог
               </p>
             </button>
-            <div className="inpt flex items-center py-[17px] px-[20px] w-full md:w-[502px] border rounded-[5px] mt-4 md:mt-0">
+            <div className="inpt flex items-center sm:py-[8px] py-[17px] px-[20px] w-full md:w-[502px] border rounded-[5px] sm:mt-1 mt-4 md:mt-0">
               <input
                 type="text"
                 placeholder="Поиск"
@@ -131,14 +131,14 @@ const Index = () => {
               </button>
             </div>
           </ul>
-          <ul className="flex items-center gap-[13px] flex-wrap mt-4 md:mt-0">
-            <button className="py-[13px] px-[12px] rounded-[3px] bg-[#F2F2F2]">
+          <ul className="flex items-center sm:gap-[4px] gap-[13px] flex-wrap sm:mt-1 mt-4 md:mt-0">
+            <button className="py-[13px] sm:py-[8px] px-[12px] rounded-[3px] bg-[#F2F2F2]">
               <Image src={User} alt="user"/>
             </button>
-            <button className="py-[13px] px-[12px] rounded-[3px] bg-[#F2F2F2]">
+            <button className="py-[13px] sm:py-[8px] px-[12px] rounded-[3px] bg-[#F2F2F2]">
               <Image src={Wishlist} alt="wishlist" />
             </button>
-            <button className="flex items-center py-[15px] px-[30px] gap-[5px] rounded-[5px] ml-[25px] bg-[#F2F2F2] justify-center">
+            <button className="flex items-center sm:py-[8px] py-[15px] px-[30px] gap-[5px] rounded-[5px] ml-[25px] bg-[#F2F2F2] justify-center">
               <Image src={Korzinka} alt="korzina" />
               <p className="text-[20px] not-italic font-normal leading-normal text-[#1F1D14]">
                 Корзина

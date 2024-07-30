@@ -24,7 +24,7 @@ const index = () => {
   const imgList = [Butsa, Butsa, Butsa, Butsa, Butsa];
 
   return (
-    <div className="main mb-[83px]  sm:mb-[20px] mt-[250px]">
+    <div className="main mb-[83px]  sm:mb-[20px] sm:mt-[200px] mt-[210px]">
       <div className="container mt-[40px]">
         <Swiper
           modules={[Navigation, Pagination, Scrollbar, Parallax, A11y, Autoplay]}
