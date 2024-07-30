@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { Header, Footer} from '@/components'
 import { Hom, Right,Share ,Printer } from "@/public/assets"
 import Card from "../../components/ui/card"
+import Link from 'next/link'
 const index = () => {
   return (
     <>

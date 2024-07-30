@@ -13,7 +13,7 @@ const Page = () => {
                 <div className="container ">
                     <ul className="navigate flex items-center gap-[6px] sm:px-4">
                         <li className="flex gap-[6px] items-center">
-                            <Image src={Hom} alt="Home icon" />
+                            <Image src={Hom} alt="Homeicon" />
                             <Link href="/" className="text-[16px] not-italic font-normal leading-normal text-[#000]">Главная</Link>
                         </li>
                         <li className="flex gap-[6px] items-center">
@@ -32,12 +32,14 @@ const Page = () => {
                                     <li className="flex items-center gap-[5px]">
                                         <Image
                                             src={Calendar}
+                                            alt="calendar"
                                         />
                                         <p>27.01.2022</p>
                                     </li>
                                     <li className="flex items-center gap-[5px]">
                                         <Image
                                             src={Eye}
+                                            alt="eye"
                                         />
                                         <p>250</p>
                                     </li>
@@ -51,12 +53,14 @@ const Page = () => {
                                     <li className="flex items-center gap-[5px]">
                                         <Image
                                             src={Calendar}
+                                            alt="calendar"
                                         />
                                         <p>27.01.2022</p>
                                     </li>
                                     <li className="flex items-center gap-[5px]">
                                         <Image
                                             src={Eye}
+                                            alt="eye"
                                         />
                                         <p>250</p>
                                     </li>
@@ -73,12 +77,14 @@ const Page = () => {
                                     <li className="flex items-center gap-[5px]">
                                         <Image
                                             src={Calendar}
+                                            alt="calendar"
                                         />
                                         <p>27.01.2022</p>
                                     </li>
                                     <li className="flex items-center gap-[5px]">
                                         <Image
                                             src={Eye}
+                                            alt="eye"
                                         />
                                         <p>250</p>
                                     </li>
@@ -92,12 +98,14 @@ const Page = () => {
                                     <li className="flex items-center gap-[5px]">
                                         <Image
                                             src={Calendar}
+                                            alt="image"
                                         />
                                         <p>27.01.2022</p>
                                     </li>
                                     <li className="flex items-center gap-[5px]">
                                         <Image
                                             src={Eye}
+                                            alt="image"
                                         />
                                         <p>250</p>
                                     </li>
