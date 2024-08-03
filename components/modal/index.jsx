@@ -1,10 +1,3 @@
+import UserModal from "./user-modal"
 
-const index = () => {
-  return (
-<>
-<h1>Modal</h1>
-</>
-)
-}
-
-export default index
+export {UserModal}

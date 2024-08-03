@@ -11,6 +11,7 @@ import Search from "../../../public/assets/icons/search.svg";
 import User from "../../../public/assets/icons/user.svg";
 import Wishlist from "../../../public/assets/icons/heart.svg";
 import Korzinka from "../../../public/assets/icons/shopping.svg";
+import { UserModal } from '@/components/modal';
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -44,23 +45,37 @@ const Index = () => {
     };
   }, [isMenuOpen]);
 
+  const handleClick = ()=>{
+    setOpen(true)
+  }
+
+  const toggle = ()=>{
+    setOpen(false)
+  }
+
+  const [open,setOpen] = useState(false)
+
   return (
+    <>
+    <div className='hidden'>
+    <UserModal  open={open} toggle={toggle} />
+    </div>
     <header className="bg-[#1F1D14] w-full fixed top-0 z-[99999]">
-      <div className="container sm:px-4">
-        <nav className="navbar flex items-center justify-between py-[10px] md:py-[20px]">
+      <div className="container sm:px-4 tb:px-4">
+        <nav className="navbar flex items-center tb:justify-center tb:gap-[20px] justify-between py-[10px] md:py-[20px]">
           <Link href="/" className="flex items-center gap-[11px] mr-[53px]">
-            <Image src={Logo} width={"62px"} height={"54px"} alt="logo" />
+            <Image src={Logo} width={"62px"} height={"54px"} alt="logo" className='tb:w-[40px]' />
             <div className="flex flex-col items-start text-2xl font-semibold text-white">
               <p>Sport</p>
               <p>Market</p>
             </div>
           </Link>
-          <ul className="hidden md:flex items-center gap-[30px] mr-[224.5px]">
-            <Link href="/product" className="text-[16px] font-normal leading-normal text-white hover:text-gray-400 transition-colors duration-300">Продукты</Link>
-            <Link href="#footer" className="text-[16px] font-normal leading-normal text-white hover:text-gray-400 transition-colors duration-300">Контакты</Link>
-            <Link href="/delivery" className="text-[16px] font-normal leading-normal text-white hover:text-gray-400 transition-colors duration-300">Оплата и Доставка</Link>
-            <Link href="/#" className="text-[16px] font-normal leading-normal text-white hover:text-gray-400 transition-colors duration-300">Новости</Link>
-            <Link href="/about" className="text-[16px] font-normal leading-normal text-white hover:text-gray-400 transition-colors duration-300">О нас</Link>
+          <ul className="hidden md:flex items-center gap-[30px] tb:mr-[0px] mr-[224.5px]">
+            <Link href="/product" className="text-[16px]   font-normal leading-normal text-white hover:text-gray-400 transition-colors duration-300">Продукты</Link>
+            <Link href="#footer" className="text-[16px]   font-normal leading-normal text-white hover:text-gray-400 transition-colors duration-300">Контакты</Link>
+            <Link href="/delivery" className="text-[16px]   font-normal leading-normal text-white hover:text-gray-400 transition-colors duration-300">Оплата и Доставка</Link>
+            <Link href="/#" className="text-[16px]   font-normal leading-normal text-white hover:text-gray-400 transition-colors duration-300">Новости</Link>
+            <Link href="/about" className="text-[16px]   font-normal leading-normal text-white hover:text-gray-400 transition-colors duration-300">О нас</Link>
           </ul>
           <ul className="hidden md:flex items-center gap-[30px]">
             <Link href="tel:+998905658585" className="flex items-center gap-[5px] text-white text-[16px] font-normal leading-normal hover:text-gray-400 transition-colors duration-300">
@@ -132,7 +147,7 @@ const Index = () => {
             </div>
           </ul>
           <ul className="flex items-center sm:gap-[4px] gap-[13px] flex-wrap sm:mt-1 mt-4 md:mt-0">
-            <button className="py-[13px] sm:py-[8px] px-[12px] rounded-[3px] bg-[#F2F2F2]">
+            <button className="py-[13px] sm:py-[8px] px-[12px] rounded-[3px] bg-[#F2F2F2]" onClick={handleClick}>
               <Image src={User} alt="user"/>
             </button>
             <button className="py-[13px] sm:py-[8px] px-[12px] rounded-[3px] bg-[#F2F2F2]">
@@ -149,6 +164,7 @@ const Index = () => {
       </div>
     </div>
     </header>
+    </>
   );
 };
 
