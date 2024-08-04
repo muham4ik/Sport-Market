@@ -36,6 +36,7 @@ const Index = () => {
           pagination={{ clickable: true }}
           className="w-full rounded-lg bg-white overflow-hidden"
           modules={[Navigation, Pagination, Autoplay]}
+          loop="true"
         >
           {images.map((item, index) => (
             <SwiperSlide key={index} className="flex justify-center items-center">

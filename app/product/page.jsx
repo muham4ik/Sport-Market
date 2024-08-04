@@ -1,6 +1,7 @@
 "use client"
 
-import * as React from 'react';
+import React, { useState } from 'react';
+
 import Image from 'next/image';
 import { Header, Footer } from '@/components';
 import { Slider, Typography, Box, Tooltip } from '@mui/material';
@@ -33,7 +34,7 @@ const CustomSlider = styled(Slider)(({ theme }) => ({
 }));
 
 const Page = () => { // Kichik harf bilan yozilgan `page` o'rniga katta harf bilan yozing.
-    const [value, setValue] = React.useState([250, 500]);
+    const [value, setValue] = useState([250, 500]);
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -153,10 +154,6 @@ const Page = () => { // Kichik harf bilan yozilgan `page` o'rniga katta harf bil
                             </ul>
                         </div>
                         <div className="card flex flex-col gap-[40px]">
-                            <ProductCard />
-                            <ProductCard />
-                            <ProductCard />
-                            <ProductCard />
                             <ProductCard />
                             <button className='py-[15px] flex justify-center text-[20px] not-italic font-normal text-[#000] bg-[white]'>Показать ещё</button>
                         </div>

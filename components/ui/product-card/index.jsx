@@ -1,6 +1,5 @@
 "use client"
 import Image from "next/image"
-import { ProductImg } from "@/public/product-image"
 import Wishlist from "../../../public/assets/icons/heart.svg"
 import { Korzina } from "@/public/assets"
 import { getProduct } from "@/service/product";
@@ -38,14 +37,14 @@ const index = () => {
       <div className="cards flex sm:flex-col items-center gap-[35px]">
         {
           data?.map((item, index) => (
-            <div className="card rounded-[5px] w-[292px] bg-[#ffff]" key={index}>
+            <div className="card rounded-[5px] w-[214.5px] bg-[#ffff]" key={index}>
               <div className="card_header flex justify-end gap-[48px]  p-[10px] pb-[0px]">
                 <Image
                   src={Wishlist}
                   alt="wishlis"
                 />
               </div>
-              <div className="card_body h-[200px] flex justify-center">
+              <div className="card_body h-[216px] flex justify-center">
                 <Image
                   className="  pb-[25px]"
                   src={item.image_url[0]}

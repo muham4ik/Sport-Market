@@ -1,3 +1,3 @@
-import UserModal from "./user-modal"
-
-export {UserModal}
+import UserModal from "./login-modal"
+import ForgotModal from "./forgot-modal"
+export {UserModal , ForgotModal}

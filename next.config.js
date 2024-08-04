@@ -2,6 +2,7 @@
 const nextConfig = {
     images: {
       domains: ['swiperjs.com'],
+      domains: ['media.go-clothes.uz'],
     },
   };
   
