@@ -71,15 +71,14 @@ const Index = () => {
       // Add the product to the basket
       await postProduct(id);
 
-      // Navigate to the basket page
-      router.push('/korzina');
     } catch (error) {
       console.error('Error adding product to basket:', error);
     }
   };
 
   return (
-    <div className="container flex justify-around relative flex-wrap  gap-4 md:gap-8">
+    <div className="container m-auto">
+      <div className="cards sm:flex sm:flex-col sm:gap-4 sm:m-auto flex gap-8">
       {loading ? (
         <div className="main h-[200px]  flex justify-center items-center">
           <h1 className="text-[32px] not-italic font-semibold text-center">
@@ -94,7 +93,7 @@ const Index = () => {
         </div>
       ) : (
         data.map((item) => (
-          <div className="card rounded-[5px] w-[292px] bg-[#ffff] shadow-md" key={item.product_id}>
+          <div className="card sm:m-auto rounded-[5px] w-[292px] bg-[#ffff] shadow-md" key={item.product_id}>
             <div className="relative card_header flex justify-end p-[10px]">
               <button
                 className={`relative p-2 rounded-full ${item.liked ? 'bg-red-500' : 'bg-gray-200'} transition-colors duration-300`}
@@ -144,6 +143,8 @@ const Index = () => {
           </div>
         ))
       )}
+      </div>
+
     </div>
   );
 };

@@ -43,16 +43,19 @@ const Page = () => {
     setQuantity(prevQuantity => (prevQuantity > 1 ? prevQuantity - 1 : 1));
   };
 
-  const delPRo = async (id) => {
+  const deleteProduct = (id) => {
+    setProductData((prevProductData) => prevProductData.filter(item => item.product_id !== id));
+  };
+  
+  const delPRo = (id) => {
     if (!id) {
       console.error("No product ID provided");
       return;
     }
-
+  
     try {
-      await deleteProduct(id);
-      // Refresh the product data after deletion
-      await fetchProductData();
+      // Remove the product from the productData array
+      deleteProduct(id);
     } catch (error) {
       console.error("Error deleting product:", error);
       setError(error);
@@ -82,12 +85,12 @@ const Page = () => {
                 <li><p className="text-[14px] text-[#FF1313] not-italic">Очистить все</p></li>
               </ul>
               <div className="korzina_product flex flex-col bg-[#fff] gap-[12px] rounded-lg">
-                {loading && <p className="text-center text-[#1F1D14]">Yuklanmoqda...</p>}
-                {error && <p className="text-center text-[#FF1313]">Xatolik: {error.message}</p>}
+                {loading && <p className='text-center w-full text-[32px] font-medium my-[80px]'>Загрузка......</p>}
+                {error && <p className='text-center w-full text-[32px] font-medium my-[80px]'>Error: {error.message}</p>}
                 {productData.length > 0 ? productData.map((item, index) => (
                   <ul key={index} className="flex items-center gap-[22px] sm:gap-3 sm:p-2 p-[10px] bg-[#F2F2F2]">
                     <Image
-                      src={item.image_url[0] || OrgImg}
+                      src={item.image_url[0] || "Image not found"}
                       alt={`Product image ${index + 1}`}
                       className="sm:w-[85px]"
                       width={145}
@@ -111,12 +114,12 @@ const Page = () => {
                         </div>
                       </div>
                     </li>
-                    <button onClick={() => delPRo(item.id)} className="rounded-[50%] ml-[200px] sm:ml-0 sm:p-2 p-[9px] bg-white">
+                    <button onClick={() => delPRo(item.product_id)} className="rounded-[50%] ml-[200px] sm:ml-0 sm:p-2 p-[9px] bg-white">
                       <Image src={Trash} alt="Trash icon" width={18} height={18} />
                     </button>
                   </ul>
                 )) : (
-                  <p className="text-center text-[#1F1D14]">Savat bo&apos;sh</p>
+                  <p className='text-center w-full text-[32px] font-medium my-[80px]'>Tовары не найдены...</p>
                 )}
               </div>
               <ul className="flex flex-col py-[63px] sm:py-5 pr-[400px] sm:px-2 gap-[20px]">
@@ -159,7 +162,7 @@ const Page = () => {
                   <p className="text-[16px] text-[#1F1D14]">Адрес *</p>
                   <input type="text" placeholder="Адрес" className="py-[18px] px-[20px] bg-[#F2F2F2] rounded-[8px] placeholder:text-[20px] placeholder:text-[#1F2D14]" />
                 </li>
-                <button type="submit" className="bg-[#06F] text-[#FFFFFF] py-[20px] px-[30px] rounded-[8px] text-[20px] font-medium">
+                <button type="submit" className="bg-[#FBD029] text-[#FFFFFF] py-[20px] px-[30px] rounded-[8px] text-[20px] font-medium">
                   Оформить заказ
                 </button>
               </form>

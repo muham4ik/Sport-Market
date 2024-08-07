@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { Header, Footer, } from '../../components';
+import { Header, Footer } from '../../components';
 import { WishlistCard } from '../../components';
 import { Slider } from '@mui/material';
 import { styled } from '@mui/material/styles';
@@ -35,6 +35,7 @@ const CustomSlider = styled(Slider)(({ theme }) => ({
 
 const Page = () => {
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true); // Add loading state
 
   // Fetch data from API
   const getData = async () => {
@@ -48,6 +49,8 @@ const Page = () => {
       }
     } catch (error) {
       console.error('Error fetching products:', error);
+    } finally {
+      setLoading(false); // Set loading to false after fetching
     }
   };
 
@@ -115,17 +118,24 @@ const Page = () => {
             </li>
           </ul>
           <div className="products flex sm:flex-col sm:justify-center sm:items-center gap-[24px]">
-            <div className="product_right flex">
-              <div className="cards flex sm:flex-col items-center gap-[35px]">
-                {products.map(product => (
-                  <WishlistCard
-                    key={product.product_id}
-                    product={product}
-                    onClick={() => handleWishlistClick(product.product_id)}
-                  />
-                ))}
+            
+            {loading ? (
+              <p className='text-center w-full text-[32px] font-medium my-[120px]'>Загрузка...</p> // Show loading message
+            ) : products.length === 0 ? (
+              <p className='text-center w-full text-[32px] font-medium my-[120px]'>Tовары не найдены...</p> // Show no products message
+            ) : (
+              <div className="product_right flex">
+                <div className="cards flex sm:flex-col items-center gap-[35px]">
+                  {products.map(product => (
+                    <WishlistCard
+                      key={product.product_id}
+                      product={product}
+                      onClick={() => handleWishlistClick(product.product_id)}
+                    />
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
         <Footer />

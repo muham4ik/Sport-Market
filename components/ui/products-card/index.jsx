@@ -71,15 +71,14 @@ const Index = () => {
       // Add the product to the basket
       await postProduct(id);
 
-      // Navigate to the basket page
-      router.push('/korzina');
     } catch (error) {
       console.error('Error adding product to basket:', error);
     }
   };
 
   return (
-    <div className="container flex justify-around relative flex-wrap  gap-4 md:gap-8">
+    <div className="container flex relative">
+      <div className="cards sm:flex sm:flex-col sm:gap-4 flex gap-8 sm:m-auto">
       {loading ? (
         <div className="main h-[200px]  flex justify-center items-center">
           <h1 className="text-[32px] not-italic font-semibold text-center">
@@ -144,6 +143,8 @@ const Index = () => {
           </div>
         ))
       )}
+      </div>
+
     </div>
   );
 };

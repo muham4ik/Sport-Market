@@ -31,7 +31,7 @@ export const deleteProduct = async (id) => {
 
     try {
         console.log(`Attempting to delete product with ID: ${id}`);
-        const response = await axios.delete(`/v1/products/${id}`);
+        const response = await axios.delete(`/v1//basket`, { productId: id });
         if (response.status === 200) {
             return response.data;
         } else {
