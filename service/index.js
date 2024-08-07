@@ -1,3 +1,3 @@
-import auth from "./auth"
-import product from "./product"
-export {auth ,product}
+import {Login} from "./auth"
+import {postProduct, gettProduct} from "./bascet"
+export {Login ,postProduct , gettProduct}

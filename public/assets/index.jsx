@@ -32,4 +32,5 @@ import Payme from "./images/payme.svg"
 import Butsa from "./images/butsa.svg"
 import Kalit from "./icons/zamok.svg"
 import Zamok from "./icons/kalit.svg"
-export { Heart, Icon, Layers, Logo, Mail, Phone, Polniy, Red, Search, Korzina, User, Left, Right,News ,Top ,Calendar ,Eye ,Kreslo ,Instagram , Facebook , Telegram ,Hom ,Board,Listt ,Shaxzod,Share,Printer ,Trash ,Location ,Clik ,Payme ,Butsa ,Zamok ,Kalit}
+import HeartIcon from "./images/heart.svg"
+export { Heart, Icon, Layers, Logo, Mail, Phone, Polniy, Red, Search, Korzina, User, Left, Right,News ,Top ,Calendar ,Eye ,Kreslo ,Instagram , Facebook , Telegram ,Hom ,Board,Listt ,Shaxzod,Share,Printer ,Trash ,Location ,Clik ,Payme ,Butsa ,Zamok ,Kalit ,HeartIcon}

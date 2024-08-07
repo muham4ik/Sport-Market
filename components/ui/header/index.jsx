@@ -12,7 +12,7 @@ import User from "../../../public/assets/icons/user.svg";
 import Wishlist from "../../../public/assets/icons/heart.svg";
 import Korzinka from "../../../public/assets/icons/shopping.svg";
 import { ToastContainer } from 'react-toastify';
-import { UserModal } from '@/components/modal';
+import { UserModal } from '../../../components/modal';
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -152,15 +152,15 @@ const Index = () => {
             <button className="py-[13px] sm:py-[8px] px-[12px] rounded-[3px] bg-[#F2F2F2] hover:bg-[#FBD029]" onClick={handleClick}>
               <Image src={User} alt="user"/>
             </button>
-            <button className="py-[13px] sm:py-[8px] px-[12px] rounded-[3px] bg-[#F2F2F2]">
+            <Link href="/wishlist" className="py-[13px] hover:bg-[#FBD029] sm:py-[8px] px-[12px] rounded-[3px] bg-[#F2F2F2]">
               <Image src={Wishlist} alt="wishlist" />
-            </button>
-            <button className="flex items-center sm:py-[8px] py-[15px] px-[30px] gap-[5px] rounded-[5px] ml-[25px] bg-[#F2F2F2] justify-center">
+            </Link>
+            <Link href="/korzina" className="flex items-center hover:bg-[#FBD029] sm:py-[8px] py-[15px] px-[30px] gap-[5px] rounded-[5px] ml-[25px] bg-[#F2F2F2] justify-center">
               <Image src={Korzinka} alt="korzina" />
               <p className="text-[20px] not-italic font-normal leading-normal text-[#1F1D14]">
                 Корзина
               </p>
-            </button>
+            </Link>
           </ul>
         </nav>
       </div>

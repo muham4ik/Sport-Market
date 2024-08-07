@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import Korzinka from "../../public/assets/icons/shopping.svg";
+import Korzinka from "../../../public/assets/icons/shopping.svg";
 import { Hom, Right, Shaxzod, Share, } from "@/public/assets"
 import { ProductsCard, Header, Footer } from "@/components"
 import Link from 'next/link'
