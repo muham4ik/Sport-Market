@@ -23,3 +23,22 @@ export const gettProduct = async () => {
     }
 };
 
+
+export const deleteProduct = async (id) => {
+    if (!id) {
+        throw new Error("No product ID provided");
+    }
+
+    try {
+        console.log(`Attempting to delete product with ID: ${id}`);
+        const response = await axios.delete(`/v1/products/${id}`);
+        if (response.status === 200) {
+            return response.data;
+        } else {
+            throw new Error(`Failed to delete product with ID: ${id}`);
+        }
+    } catch (error) {
+        console.error("Error deleting product:", error);
+        throw error;
+    }
+};

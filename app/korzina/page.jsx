@@ -3,10 +3,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Header, Footer } from "../../components";
-import { Hom, Right, Trash, Location, Clik, Payme } from "../../public/assets";
+import { Hom, Right, Trash, OrgImg } from "../../public/assets";
 import { useState, useEffect } from "react";
-import { OrgImg } from "../../public/korzina-image";
-import { gettProduct } from "../../service/bascet";
+import { gettProduct, deleteProduct } from "../../service/bascet";
 
 const Page = () => {
   const [quantity, setQuantity] = useState(1);
@@ -30,7 +29,7 @@ const Page = () => {
     };
 
     if (productId) {
-      // Handle case where productId is present
+      // Handle case where productId is present if needed
     } else {
       fetchProductData();
     }
@@ -42,6 +41,22 @@ const Page = () => {
 
   const handleDecrease = () => {
     setQuantity(prevQuantity => (prevQuantity > 1 ? prevQuantity - 1 : 1));
+  };
+
+  const delPRo = async (id) => {
+    if (!id) {
+      console.error("No product ID provided");
+      return;
+    }
+
+    try {
+      await deleteProduct(id);
+      // Refresh the product data after deletion
+      await fetchProductData();
+    } catch (error) {
+      console.error("Error deleting product:", error);
+      setError(error);
+    }
   };
 
   return (
@@ -96,9 +111,9 @@ const Page = () => {
                         </div>
                       </div>
                     </li>
-                    <li className="rounded-[50%] ml-[200px] sm:ml-0 sm:p-2 p-[9px] bg-white">
+                    <button onClick={() => delPRo(item.id)} className="rounded-[50%] ml-[200px] sm:ml-0 sm:p-2 p-[9px] bg-white">
                       <Image src={Trash} alt="Trash icon" width={18} height={18} />
-                    </li>
+                    </button>
                   </ul>
                 )) : (
                   <p className="text-center text-[#1F1D14]">Savat bo&apos;sh</p>
@@ -138,20 +153,16 @@ const Page = () => {
                 </li>
                 <li className="flex flex-col gap-[18px]">
                   <p className="text-[16px] text-[#1F1D14]">Телефон *</p>
-                  <input type="tel" placeholder="+998" className="py-[18px] px-[20px] bg-[#F2F2F2] rounded-[8px] placeholder:text-[20px] placeholder:text-[#1F2D14]" />
+                  <input type="text" placeholder="Телефон" className="py-[18px] px-[20px] bg-[#F2F2F2] rounded-[8px] placeholder:text-[20px] placeholder:text-[#1F2D14]" />
                 </li>
                 <li className="flex flex-col gap-[18px]">
                   <p className="text-[16px] text-[#1F1D14]">Адрес *</p>
                   <input type="text" placeholder="Адрес" className="py-[18px] px-[20px] bg-[#F2F2F2] rounded-[8px] placeholder:text-[20px] placeholder:text-[#1F2D14]" />
                 </li>
-                <li className="flex flex-col gap-[18px]">
-                  <p className="text-[16px] text-[#1F1D14]">Комментарии</p>
-                  <textarea placeholder="Комментарии" className="py-[18px] px-[20px] bg-[#F2F2F2] rounded-[8px] placeholder:text-[20px] placeholder:text-[#1F2D14]" />
-                </li>
+                <button type="submit" className="bg-[#06F] text-[#FFFFFF] py-[20px] px-[30px] rounded-[8px] text-[20px] font-medium">
+                  Оформить заказ
+                </button>
               </form>
-              <button className="bg-[#FBD029] text-[#1F1D14] py-[16px] text-[20px] rounded-[8px] mt-[19px] sm:w-full">
-                <p className="text-[20px] sm:text-[18px]">Купить</p>
-              </button>
             </div>
           </div>
         </div>
