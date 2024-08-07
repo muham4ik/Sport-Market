@@ -25,6 +25,8 @@ const Backdrop = React.forwardRef((props, ref) => {
   );
 });
 
+Backdrop.displayName = 'Backdrop';
+
 Backdrop.propTypes = {
   open: PropTypes.bool,
 };
@@ -134,7 +136,7 @@ export default function TransitionsModal({ open, toggle }) {
               <li className="flex flex-col gap-[7px]">
                 <h1 className="text-[#000] text-[24px] font-medium leading-normal">Вход в аккаунт</h1>
                 <p className="text-[#000] text-[12px]">
-                  Если Вы не зарегистрированы, нажмите кнопку <Link href="#" className="text-[#FBD029]">" Регистрация "</Link>
+                  Если Вы не зарегистрированы, нажмите кнопку <Link href="#" className="text-[#FBD029]">&quot; Регистрация &quot;</Link>
                 </p>
               </li>
               <Formik

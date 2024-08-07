@@ -30,8 +30,8 @@ const Page = () => {
     };
 
     if (productId) {
-      
-    }else{
+      // Handle case where productId is present
+    } else {
       fetchProductData();
     }
   }, [productId]);
@@ -101,7 +101,7 @@ const Page = () => {
                     </li>
                   </ul>
                 )) : (
-                  <p className="text-center text-[#1F1D14]">Savat bo'sh</p>
+                  <p className="text-center text-[#1F1D14]">Savat bo&apos;sh</p>
                 )}
               </div>
               <ul className="flex flex-col py-[63px] sm:py-5 pr-[400px] sm:px-2 gap-[20px]">
