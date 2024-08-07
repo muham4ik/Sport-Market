@@ -3,16 +3,24 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Header, Footer } from "../../components";
-import { Hom, Right, Trash, OrgImg } from "../../public/assets";
+import { Hom, Right, Trash } from "../../public/assets";
 import { useState, useEffect } from "react";
-import { gettProduct, deleteProduct } from "../../service/bascet";
+import { gettProduct } from "../../service/bascet";
 
 const Page = () => {
   const [quantity, setQuantity] = useState(1);
   const [loading, setLoading] = useState(false);
   const [productData, setProductData] = useState([]);
   const [error, setError] = useState(null);
-  const productId = sessionStorage.getItem('productId');
+  const [productId, setProductId] = useState(null);
+
+  useEffect(() => {
+    // `sessionStorage` ga murojaat qilishdan oldin mijoz (brauzer) tomonida ishlayotganligini tekshirish
+    if (typeof window !== 'undefined') {
+      const storedProductId = sessionStorage.getItem('productId');
+      setProductId(storedProductId);
+    }
+  }, []);
 
   useEffect(() => {
     const fetchProductData = async () => {
@@ -28,9 +36,7 @@ const Page = () => {
       }
     };
 
-    if (productId) {
-      // Handle case where productId is present if needed
-    } else {
+    if (!productId) {
       fetchProductData();
     }
   }, [productId]);
@@ -46,7 +52,7 @@ const Page = () => {
   const deleteProduct = (id) => {
     setProductData((prevProductData) => prevProductData.filter(item => item.product_id !== id));
   };
-  
+
   const delPRo = (id) => {
     if (!id) {
       console.error("No product ID provided");
