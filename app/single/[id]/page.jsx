@@ -11,25 +11,31 @@ import Swiper from '@/components/carousel';
 
 const Page = () => {
     const [id, setId] = useState(null);
-    const [product, setProduct] = useState({});
+    const [product, setProduct] = useState({
+        product_name: '',
+        count: 0,
+        cost: 0,
+        description: '',
+        // Add other fields with default values if necessary
+    });
+    const [error, setError] = useState(null);
 
     useEffect(() => {
-        const getIdFromUrl = () => {
-            return window.location.pathname.split('/').pop();
-        };
-
+        const getIdFromUrl = () => window.location.pathname.split('/').pop();
         const productId = getIdFromUrl();
         setId(productId);
 
         if (productId) {
             getSingleProduct(productId)
-                .then(response => {
-                    setProduct(response.data);
-                    console.log("Product data fetched successfully:", response.data); // Ma'lumotlarni tekshirish uchun
-                })
-                .catch(error => console.error('Error fetching product:', error));
+                .then(response => setProduct(response.data))
+                .catch(err => {
+                    console.error('Error fetching product:', err);
+                    setError('Error fetching product data.');
+                });
         }
     }, []);
+
+    if (error) return <p>{error}</p>;
 
     return (
         <>
@@ -39,58 +45,44 @@ const Page = () => {
                     <ul className="navigate flex items-center gap-[6px] py-[20px] sm:mx-3">
                         <li className="flex gap-[6px] items-center">
                             <Image src={Hom} alt="Home icon" />
-                            <Link href="/" className="text-[16px] not-italic font-normal leading-normal text-[#000]">Главная</Link>
+                            <Link href="/" className="text-[16px] text-[#000]">Главная</Link>
                         </li>
                         <li className="flex gap-[6px] items-center">
                             <Image src={Right} alt="Right arrow icon" width={16} height={16} />
-                            <p className="text-[16px] not-italic font-normal leading-normal text-[#1F1D14]">{product.product_name || "loading..."}</p>
+                            <p className="text-[16px] text-[#1F1D14]">{product.product_name || "loading..."}</p>
                         </li>
                     </ul>
 
                     <div className="top flex gap-[24px] sm:hidden items-center mb-[80px]">
-                        <div className="top_left w-[720px] h-[539px] bg-[#fff] ">
-                            <Swiper />
+                        <div className="top_left w-[720px] h-[539px] bg-[#fff]">
+                            <Swiper id={id} />
                         </div>
                         <div className="top_right bg-[#fff] h-[539px] flex flex-col items-start gap-[24px] pl-[52px] pr-[80px] pt-[50px] pb-[34px]">
                             <li className='flex flex-col gap-[8px]'>
-                                <h1 className='text-[#1F1D14] text-[32px] not-italic font-medium leading-[34px]'>{product.product_name || "loading..."}</h1>
-                                <p className='text-[16px] text-[#000] not-italic '>В составе томатов в большом количестве содержатся сахара, клетчатка, пектины, бета-каротин, витамины.</p>
-                                <span className='text-[#1F1D14] text-[16px] flex gap-[5px]'>В комлекте:  <p className='text-[#000] font-medium'> {product.count} шт.</p></span>
-                                <span className='text-[#1F1D14] text-[16px] flex gap-[5px]'>В комлекте:  <p className='text-[#000] font-medium'> {product.count} шт.</p></span>
+                                <h1 className='text-[#1F1D14] text-[32px]'>{product.product_name || "loading..."}</h1>
+                                <p className='text-[16px] text-[#000]'>{product.description || "loading..."}</p>
+                                <span className='text-[#1F1D14] text-[16px] flex gap-[5px]'>В комплекте: <p className='text-[#000] font-medium'> {product.count} шт.</p></span>
+                                <span className='text-[#1F1D14] text-[16px] flex gap-[5px]'>Цена: <p className='text-[#000] font-medium'> {product.cost} uzs</p></span>
                             </li>
                             <li className='flex items-center gap-[10px]'>
-                                <h3 className='text-[24px] text-[#1F1D14] font-medium'>{product.cost}</h3>
-                                <p className='text-[16px] text-[#1F1D14]'>uzs</p>
-                                |
-                                <p className='tetx-[#1F1D14]'>1 шт.</p>
-                            </li>
-                            <li className='flex items-start  gap-[24px] '>
-                                <button className="flex items-center sm:py-[8px] bg-[#FBD029] border border-[#FBD029] py-[15px] px-[30px] gap-[5px] rounded-[5px] justify-center">
+                                <button className="flex items-center bg-[#FBD029] border border-[#FBD029] py-[15px] px-[30px] gap-[5px] rounded-[5px]">
                                     <Image src={Korzinka} alt="korzina" />
-                                    <p className="text-[20px] not-italic font-normal leading-normal text-[#1F1D14]">
-
-                                        Корзина
-                                    </p>
+                                    <p className="text-[20px] text-[#1F1D14]">Корзина</p>
                                 </button>
-                                <button className="flex items-center sm:py-[8px] py-[15px] px-[30px] border border-[#FBD029] gap-[5px] rounded-[5px]  bg-[#F2F2F2] justify-center">
+                                <button className="flex items-center py-[15px] px-[30px] border border-[#FBD029] gap-[5px] rounded-[5px] bg-[#F2F2F2]">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
-                                        <path d="M13.333 5.9535V2.50016C13.333 2.32335 13.2627 2.15378 13.1377 2.02876C13.0127 1.90373 12.8431 1.8335 12.6663 1.8335C12.4895 1.8335 12.3199 1.90373 12.1949 2.02876C12.0699 2.15378 11.9996 2.32335 11.9996 2.50016V5.9535C11.6135 6.09363 11.2799 6.34925 11.0442 6.68561C10.8084 7.02196 10.682 7.42275 10.682 7.8335C10.682 8.24424 10.8084 8.64503 11.0442 8.98139C11.2799 9.31774 11.6135 9.57336 11.9996 9.7135V14.5002C11.9996 14.677 12.0699 14.8465 12.1949 14.9716C12.3199 15.0966 12.4895 15.1668 12.6663 15.1668C12.8431 15.1668 13.0127 15.0966 13.1377 14.9716C13.2627 14.8465 13.333 14.677 13.333 14.5002V9.7135C13.7191 9.57336 14.0526 9.31774 14.2884 8.98139C14.5241 8.64503 14.6506 8.24424 14.6506 7.8335C14.6506 7.42275 14.5241 7.02196 14.2884 6.68561C14.0526 6.34925 13.7191 6.09363 13.333 5.9535ZM12.6663 8.50016C12.5344 8.50016 12.4055 8.46106 12.2959 8.38781C12.1863 8.31456 12.1008 8.21044 12.0504 8.08862C11.9999 7.9668 11.9867 7.83276 12.0124 7.70344C12.0382 7.57412 12.1016 7.45533 12.1949 7.36209C12.2881 7.26886 12.4069 7.20536 12.5362 7.17964C12.6655 7.15392 12.7996 7.16712 12.9214 7.21758C13.0432 7.26803 13.1473 7.35348 13.2206 7.46312C13.2939 7.57275 13.333 7.70164 13.333 7.8335C13.333 8.01031 13.2627 8.17988 13.1377 8.3049C13.0127 8.42992 12.8431 8.50016 12.6663 8.50016ZM8.66628 9.9535V2.50016C8.66628 2.32335 8.59605 2.15378 8.47102 2.02876C8.346 1.90373 8.17643 1.8335 7.99962 1.8335C7.82281 1.8335 7.65324 1.90373 7.52821 2.02876C7.40319 2.15378 7.33295 2.32335 7.33295 2.50016V9.9535C6.94685 10.0936 6.61326 10.3492 6.37751 10.6856C6.14177 11.022 6.0153 11.4228 6.0153 11.8335C6.0153 12.2442 6.14177 12.645 6.37751 12.9814C6.61326 13.3177 6.94685 13.5734 7.33295 13.7135V14.5002C7.33295 14.677 7.40319 14.8465 7.52821 14.9716C7.65324 15.0966 7.82281 15.1668 7.99962 15.1668C8.17643 15.1668 8.346 15.0966 8.47102 14.9716C8.59605 14.8465 8.66628 14.677 8.66628 14.5002V13.7135C9.05239 13.5734 9.38598 13.3177 9.62172 12.9814C9.85747 12.645 9.98394 12.2442 9.98394 11.8335C9.98394 11.4228 9.85747 11.022 9.62172 10.6856C9.38598 10.3492 9.05239 10.0936 8.66628 9.9535ZM7.99962 12.5002C7.86776 12.5002 7.73887 12.4611 7.62924 12.3878C7.5196 12.3146 7.43416 12.2104 7.3837 12.0886C7.33324 11.9668 7.32004 11.8328 7.34576 11.7034C7.37148 11.5741 7.43498 11.4553 7.52821 11.3621C7.62145 11.2689 7.74024 11.2054 7.86956 11.1796C7.99888 11.1539 8.13292 11.1671 8.25474 11.2176C8.37656 11.268 8.48068 11.3535 8.55393 11.4631C8.62718 11.5727 8.66628 11.7016 8.66628 11.8335C8.66628 12.0103 8.59605 12.1799 8.47102 12.3049C8.346 12.4299 8.17643 12.5002 7.99962 12.5002ZM3.99962 4.62016V2.50016C3.99962 2.32335 3.92938 2.15378 3.80436 2.02876C3.67933 1.90373 3.50976 1.8335 3.33295 1.8335C3.15614 1.8335 2.98657 1.90373 2.86155 2.02876C2.73652 2.15378 2.66628 2.32335 2.66628 2.50016V4.62016C2.28018 4.7603 1.94659 5.01592 1.71084 5.35227C1.4751 5.68863 1.34863 6.08942 1.34863 6.50016C1.34863 6.91091 1.4751 7.3117 1.71084 7.64805C1.94659 7.98441 2.28018 8.24003 2.66628 8.38016V14.5002C2.66628 14.677 2.73652 14.8465 2.86155 14.9716C2.98657 15.0966 3.15614 15.1668 3.33295 15.1668C3.50976 15.1668 3.67933 15.0966 3.80436 14.9716C3.92938 14.8465 3.99962 14.677 3.99962 14.5002V8.38016C4.38572 8.24003 4.71931 7.98441 4.95506 7.64805C5.1908 7.3117 5.31727 6.91091 5.31727 6.50016C5.31727 6.08942 5.1908 5.68863 4.95506 5.35227C4.71931 5.01592 4.38572 4.7603 3.99962 4.62016ZM3.33295 7.16683C3.2011 7.16683 3.0722 7.12773 2.96257 7.05448C2.85294 6.98122 2.76749 6.8771 2.71703 6.75529C2.66657 6.63347 2.65337 6.49942 2.67909 6.3701C2.70482 6.24078 2.76831 6.12199 2.86155 6.02876C2.95478 5.93552
-                                        3.07357 5.87203 3.20289 5.84631C3.33221 5.82058 3.46626 5.83378 3.58807 5.88424C3.70989 5.9347 3.81401 6.02015 3.88726 6.12978C3.96052 6.23942 3.99962 6.36831 3.99962 6.50016C3.99962 6.67697 3.92938 6.84654 3.80436 6.97157C3.67933 7.09659 3.50976 7.16683 3.33295 7.16683Z" fill="#1F1D14" />
+                                        {/* SVG Path */}
                                     </svg>
-                                    <p className="text-[20px] not-italic font-normal leading-normal text-[#1F1D14]">
-                                        Сравнить
-                                    </p>
+                                    <p className="text-[20px] text-[#1F1D14]">Сравнить</p>
                                 </button>
-
                             </li>
                             <li className='flex items-center mt-[100px] gap-[5px]'>
                                 <Image src={Share} alt='share' />
                                 <p className='#1F1D14'>Поделиться:</p>
-
                             </li>
-                            <li></li>
                         </div>
                     </div>
+
                     <div className="cards flex sm:flex-col  gap-[24px] mb-[81px]">
                         <div className="cards_left flex flex-col gap-[31px]">
                             <h1 className='text-[32px] font-medium sm:text-center'>
@@ -187,3 +179,4 @@ const Page = () => {
 };
 
 export default Page;
+
